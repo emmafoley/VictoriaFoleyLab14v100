@@ -4,7 +4,6 @@
 // This file tests all the classes together.
 // and draws a train without proper OOP design.
 
-HI JUSTIN!!!!
 
 import java.awt.*;
 import java.applet.*;
