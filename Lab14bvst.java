@@ -10,21 +10,20 @@ import java.applet.*;
 import java.util.ArrayList;
 
 
-public class Lab14bvst extends Applet
-{
-	public void paint(Graphics g)
+public class Lab14bv80 extends Applet
 	{
-      ArrayList<RailCar> railCars = new ArrayList<RailCar>();
-      railCars.add(new Locomotive(Color.blue,100,300));
-      railCars.add(new PassengerCar(Color.gray,275,300));
-      railCars.add(new PassengerCar(Color.gray,450,300));
-      railCars.add(new PassengerCar(Color.gray,625,300));
-      railCars.add(new FreightCar(Color.green,800,300));
-      railCars.add(new FreightCar(Color.green,975,300));      
-      railCars.add(new Caboose(Color.red,1150,300));
-      
-      for (RailCar railCar : railCars)
-         railCar.drawCar(g);
-	}
+   	public void paint(Graphics g)
+   	{
+     		Train train = new Train(100,300);
+      	train.addCar("Locomotive",Color.blue);
+      	train.addCar("PassengerCar",Color.gray);
+      	train.addCar("PassengerCar",Color.gray);
+      	train.addCar("FreightCar",Color.green);
+      	train.addCar("PassengerCar",Color.gray);
+      	train.addCar("FreightCar",Color.green);
+      	train.addCar("Caboose",Color.red);
+      	train.addCar("FreightCar",Color.green);
+      	train.showCars(g);
+   	}
 }
 	
