@@ -11,10 +11,10 @@ import java.util.ArrayList;
 
 
 public class Lab14bv80 extends Applet
-	{
-   	public void paint(Graphics g)
-   	{
-     		Train train = new Train(100,300);
+{
+   public void paint(Graphics g)
+   {
+     	Train train = new Train(100,300);
       	train.addCar("Locomotive",Color.blue);
       	train.addCar("PassengerCar",Color.gray);
       	train.addCar("PassengerCar",Color.gray);
@@ -24,6 +24,6 @@ public class Lab14bv80 extends Applet
       	train.addCar("Caboose",Color.red);
       	train.addCar("FreightCar",Color.green);
       	train.showCars(g);
-   	}
+   }
 }
 	
