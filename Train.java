@@ -8,9 +8,9 @@ public class Train
   private int x;
   private int y;
   private Color color;
-  private ArrayList<RailCar> train = new ArrayList<RailCar>();
+  private ArrayList<RailCar> train = new ArrayList<RailCar>();    // create train ArrayList
   
- public Train(int startX,int startY)
+ public Train(int startX,int startY)    // train class constructor
  {
      startX = x;
      startY = y;
@@ -19,10 +19,10 @@ public class Train
  
    public void addCar(String type,Color color)
    {
-      if (type.equals("Locomotive")) {
-         Locomotive loco = new Locomotive(color,x,y);
-         x += 150;
-         train.add(loco);
+      if (type.equals("Locomotive")) {                        // for each type of car
+         Locomotive loco = new Locomotive(color,x,y);         // create new car object
+         x += 150;                                            // move over
+         train.add(loco);                                     // add object to ArrayList
          }
       if (type.equals("Caboose")) {
          Caboose cab = new Caboose(color,x,y);
@@ -42,7 +42,7 @@ public class Train
       
    
    }
-   public void showCars()
+   public void showCars(Graphics g)
    {
     
    }
