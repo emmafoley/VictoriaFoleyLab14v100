@@ -14,10 +14,7 @@ public class Train
      this.color = color;
  }
  
- public Train(Color color,int x,int y)
- {
-   this.color = color;
- }
+
   public void addCar(String type,Color color)
   {
 
