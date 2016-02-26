@@ -1,14 +1,17 @@
+import java.awt.*;
+
 public class Train
 {
   private String type;
   private int x;
   private int y;
-  public Color color;
+  private Color color;
   
  public Train(int startX,int startY)
  {
      startX = x;
      startY = y;
+     this.color = color;
  }
  
  public Train(Color color,int x,int y)
