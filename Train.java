@@ -27,7 +27,17 @@ public class Train
       if (type.equals("Caboose")) {
          Caboose cab = new Caboose(color,x,y);
          x += 150;
-      //if ()
+         train.add(cab);
+         }
+      if (type.equals("PassengerCar")) {
+         PassengerCar pass = new PassengerCar(color,x,y);
+         x += 150;
+         train.add(pass);
+         }
+      if (type.equals("FreightCar")) {
+         FreightCar fre = new FreightCar(color,x,y);
+         x += 150;
+         train.add(fre);
       }
       
    
