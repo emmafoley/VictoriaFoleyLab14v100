@@ -42,6 +42,30 @@ public class Train
       
    
    }
+   
+   public void addCars(int pos,String type,Color color)
+   {
+    if (type.equals("Locomotive")) {
+         Locomotive loco = new Locomotive(color,x,y);
+         x += 150;
+         train.add(pos,loco);
+         }
+      if (type.equals("Caboose")) {
+         Caboose cab = new Caboose(color,x,y);
+         x += 150;
+         train.add(pos,cab);
+         }
+      if (type.equals("PassengerCar")) {
+         PassengerCar pass = new PassengerCar(color,x,y);
+         x += 150;
+         train.add(pos,pass);
+         }
+      if (type.equals("FreightCar")) {
+         FreightCar fre = new FreightCar(color,x,y);
+         x += 150;
+         train.add(pos,fre);}  
+   }
+
    public void showCars(Graphics g)
    {
     
