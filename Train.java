@@ -10,10 +10,10 @@ public class Train
   private Color color;
   private ArrayList<RailCar> train = new ArrayList<RailCar>();    // create train ArrayList
   
- public Train(int startX,int startY)    // train class constructor
+ public Train(int x,int y)    // train class constructor
  {
-     startX = x;
-     startY = y;
+     this.x = x;
+     this.y = y;
      this.color = color;
  }
  
