@@ -68,7 +68,10 @@ public class Train
 
    public void showCars(Graphics g)
    {
-    
+     for(RailCar show: train)
+     {
+       show.drawCar(g);
+     }
    }
   
 }
