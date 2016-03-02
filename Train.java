@@ -1,3 +1,8 @@
+// Lab 14 v 100.
+// By Emma Foley and Justin Victoria.
+// This class constructs and draws a train array.
+
+
 import java.awt.*;
 import java.util.ArrayList;
 
