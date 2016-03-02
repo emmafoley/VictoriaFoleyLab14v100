@@ -10,6 +10,8 @@ public class Train
   private int pos;
   private Color color;
   private ArrayList<RailCar> train;    // construct new ArrayList train
+  private ArrayList<Color> colors;     // array of all the car colors
+  private ArrayList<String> types;     // array of all the car types
   
  public Train(int x,int y)    // train constructor
  {
@@ -18,53 +20,48 @@ public class Train
      this.pos = pos;
      this.color = color;
      train = new ArrayList<RailCar>();
+     colors = new ArrayList<Color>();
+     types = new ArrayList<String>();
  }
  
 
    public void addCar(String type,Color color)     // first addCar method
    {
-      if (type.equals("Locomotive")) {    // depending on type
-         Locomotive loco = new Locomotive(color,x,y);    // create new object
-         x += 175;      // move over 175 to make train
-         train.add(loco);     // add to array
-         }
-      if (type.equals("Caboose")) {
-         Caboose cab = new Caboose(color,x,y);
-         x += 175;
-         train.add(cab);
-         }
-      if (type.equals("PassengerCar")) {
-         PassengerCar pc = new PassengerCar(color,x,y);
-         x += 175;
-         train.add(pc);
-         }
-      if (type.equals("FreightCar")) {
-         FreightCar fc = new FreightCar(color,x,y);
-         x += 175;
-         train.add(fc);
-      }
-      
+         types.add(type);     // add each type to array
+         colors.add(color);   // add each color to array
    }
    
-       public void addCar(int pos,String type,Color color)     // overloaded addCar method, included position
+   public void addCar(int pos,String type,Color color)     // overloaded addCar method, included position
    {
-      if (type.equals("PassengerCar")) {
-         PassengerCar pass = new PassengerCar(color,x,y);   
-         train.add(3,pass);
-         x += 175;
+         types.add(pos,type);    // add type at position
+         colors.add(pos,color);  // add color at position
+   } 
+   
+   public void createTrain(ArrayList<String> array)
+   {
+      int k = 0;
+      for (String type: array)
+         {
+      //for each car type, add a new object to the arrayList 
+         if(type.equals("Locomotive"))      
+            train.add(new Locomotive(colors.get(k), x, y));
+         if(type.equals("PassengerCar"))
+            train.add(new PassengerCar(colors.get(k), x, y));
+         if(type.equals("FreightCar"))
+            train.add(new FreightCar(colors.get(k), x, y));
+         if(type.equals("Caboose"))
+            train.add(new Caboose(colors.get(k), x, y));
+         
+         x += 175;   // adjust cars to correct location
+         k++;     // change index
          }
-      else {
-         FreightCar fre = new FreightCar(color,x,y);
-         train.add(6,fre);
-         x += 175;
-         }
-   }   
+   }  
    
    public void showCars(Graphics g)
    {
-      for(RailCar car: train)    // for each car in the train array
-         car.drawCar(g);         // call to draw car method
-    
+      createTrain(types);  // send array of all the types of trains to the createTrain method
+      for(RailCar car:train)
+         car.drawCar(g);
    }
   
 }
